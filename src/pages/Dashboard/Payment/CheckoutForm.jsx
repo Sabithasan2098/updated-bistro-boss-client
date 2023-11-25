@@ -79,7 +79,7 @@ const CheckoutForm = () => {
           transectionId: paymentIntent.id,
           date: new Date(), // utc data convert . use moment js
           cartIds: cart.map((iteam) => iteam._id),
-          menuItemIds: cart.map((item) => item._id),
+          menuItemIds: cart.map((item) => item.menuId),
           status: "pending",
         };
         const res = await axiosSecure.post("/payment", payment);
